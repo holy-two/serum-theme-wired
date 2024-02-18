@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title><%= Enum.join(Enum.filter([@page.title, @site.name], &(&1 != "")), "-") %></title>
+    <link rel="stylesheet" href="<%= asset "css/style.css" %>">
+    <link rel="stylesheet" href="<%= asset "css/prism.css" %>">
+    <script type="importmap">
+      <%= File.read!("assets/js/importmap.json") %>
+    </script>
+    <script type="module">
+      import "wired-elements";
+    </script>
+    <script src="<%= asset "js/prism.js" %>"></script>
+    <%= include "head-extras" %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="top"><%= include "banner" %></header>
+      <nav><%= include "nav" %></nav>
+      <wired-divider></wired-divider>
+      <main><%= @contents %></main>
+      <wired-divider></wired-divider>
+      <footer>
+        <%= include "footer" %>
+        <p>
+          Powered by <wired-link href="https://github.com/Dalgona/Serum">Serum</wired-link> v<%= Application.spec(:serum, :vsn) %>,
+          with <wired-link href="https://github.com/holy-two/serum-theme-wired">Wired</wired-link> theme
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

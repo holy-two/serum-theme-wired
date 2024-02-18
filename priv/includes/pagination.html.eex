@@ -1,0 +1,25 @@
+<%
+alias Serum.Themes.Wired.Pagination, as: P
+
+current = @page.current_page
+last = @page.max_page
+list_dir = if @page.tag, do: @page.tag.list_url, else: base("posts")
+{prev, next} = P.get_page_nums(current, last, 2)
+%>
+<ul class="pagination">
+  <%= if not(current == 1 or 1 in prev) do %>
+    <li><a href="<%= P.page_link(list_dir, 1) %>"><wired-card>1</wired-card></a></li>
+    <li><wired-card>…</wired-card></li>
+  <% end %>
+  <%= for x <- prev do %>
+    <li><a href="<%= P.page_link(list_dir, x) %>"><wired-card><%= x %></wired-card></a></li>
+  <% end %>
+  <li><wired-card fill="var(--wired-card-fill-color)" aria-selected="true"><%= current %></wired-card></li>
+  <%= for x <- next do %>
+    <li><a href="<%= P.page_link(list_dir, x) %>"><wired-card><%= x %></wired-card></a></li>
+  <% end %>
+  <%= if not(current == last or last in next) do %>
+    <li><wired-card>…</wired-card></li>
+    <li><a href="<%= P.page_link(list_dir, last) %>"><wired-card><%= last %></wired-card></a></li>
+  <% end %>
+</ul>
