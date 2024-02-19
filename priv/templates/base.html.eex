@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<%= asset "css/style.css" %>">
     <link rel="stylesheet" href="<%= asset "css/prism.css" %>">
     <script type="importmap">
-      <%= File.read!("assets/js/importmap.json") %>
+      <%= File.read!(Serum.Themes.Wired.get_assets() <> "/js/importmap.json") %>
     </script>
     <script type="module">
       import "wired-elements";
