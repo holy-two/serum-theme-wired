@@ -7,7 +7,7 @@
         <span class="tags">
           Tags:
           <%= for t <- @page.tags do %>
-            <a class="tag" href="<%= t.list_url %>"><%= t.name %></a>
+            <wired-link class="tag" href="<%= t.list_url %>"><%= t.name %></wired-link>
           <% end %>
         </span>
       <% end %>

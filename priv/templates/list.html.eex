@@ -10,13 +10,13 @@
             <h2>
               <a href="<%= x.url %>"><%= x.title %></a><br>
             </h2>
-            <p class="post-date">
-              <%= x.date %>
+            <p class="post-info">
+              <span class="date"><%= x.date %></span>
               <%= unless Enum.empty? x.tags do %>
                 <span class="tags">
                   Tags:
                   <%= for t <- x.tags do %>
-                    <a class="tag" href="<%= t.list_url %>"><%= t.name %></a>
+                    <wired-link class="tag" href="<%= t.list_url %>"><%= t.name %></wired-link>
                   <% end %>
                 </span>
               <% end %>

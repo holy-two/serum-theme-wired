@@ -1,12 +1,28 @@
 @import "https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap";
 
-body {
-  margin: 0;
+:root {
+  color: #635;
+  --code-color: #c04078;
+  --code-background-color: #efe;
+  --link-code-color: #a4c;
+  --border-color: #c9b;
+  --quote-background-color: #4095c020;
+  --wired-link-decoration-color: #e2a;
+  --wired-divider-color: #757;
+  --wrapper-background-color: #fff;
+  --body-background-color: #fff;
   font-family: "Gloria Hallelujah", cursive;
   font-size: 16px;
   line-height: 1.8;
-  color: #635;
-  --wired-link-decoration-color: #e2a;
+}
+
+::selection {
+  color: #6264;
+}
+
+body {
+  margin: 0;
+  background-color: var(--body-background-color);
 }
 .grid {
   display: grid;
@@ -23,10 +39,10 @@ a:hover {
 }
 
 wired-divider {
-  color: #757;
+  color: var(--wired-divider-color);
 }
 wired-card[fill] {
-  --wired-card-fill-color: #e2a;
+  --wired-card-fill-color: var(--wired-link-decoration-color);
   color: #fff;
 }
 
@@ -45,7 +61,7 @@ header#top a:link,
 header#top a:active,
 header#top a:visited,
 header#top a:hover {
-  color: #635;
+  color: var(--color);
   text-decoration: none;
 }
 
@@ -65,22 +81,13 @@ nav ul {
 }
 
 nav ul li {
-  display: inline-block;
-}
-
-nav ul li:before {
-  content: "|";
-  padding: 0 1em;
-}
-
-nav ul li:first-of-type:before {
-  content: "";
-  padding: 0;
+  display: inline-flex;
+  gap: 1em;
 }
 
 footer {
   font-size: 0.75rem;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 footer p {
@@ -89,16 +96,16 @@ footer p {
 
 code {
   font-family: "Roboto Mono", "Menlo", "Consolas", monospace;
-  color: #c04078;
+  color: var(--code-color);
 }
 
 pre code {
   display: block;
   box-sizing: border-box;
   padding: 0.3rem 0.4rem;
-  border-left: 4px solid #c9b;
-  color: #635;
-  background: whitesmoke;
+  border-left: 4px solid var(--border-color);
+  color: var(--color);
+  background: var(--code-background-color);
 }
 
 h1 code,
@@ -107,7 +114,7 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-  color: #635;
+  color: var(--color);
   font-weight: bold;
 }
 
@@ -115,7 +122,7 @@ a:link code,
 a:hover code,
 a:visited code,
 a:active code {
-  color: #a4c;
+  color: var(--link-code-color);
 }
 
 #wrapper {
@@ -124,7 +131,7 @@ a:active code {
   padding: 50px;
   width: 1280px;
   min-height: 100vh;
-  background: #fff;
+  background: var(--wrapper-background-color);
 }
 
 article h1 {
@@ -172,7 +179,7 @@ blockquote p.title {
 }
 
 blockquote.note {
-  background-color: #4095c020;
+  background-color: var(--quote-background-color);
 }
 
 article.list > div > ul {
@@ -203,12 +210,12 @@ article.list p.post-preview {
 
 article.list ul.pagination {
   display: inline-flex;
-  gap: .5em;
+  gap: 0.5em;
   padding: 0;
   list-style: none;
 }
 
-p.post-date {
+p.post-info {
   margin: 0;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -217,29 +224,19 @@ p.post-date {
   opacity: 0.8;
 }
 
-span.tags:before {
-  content: "|";
-}
-
-span.tags a.tag {
-  padding: 0 5px;
-}
-span.tags a.tag:first-child {
-  padding-left: 0;
-}
-span.tags a.tag:last-child {
-  padding-right: 0;
+p.post-info .tags {
+  white-space: nowrap;
 }
 
 table {
-  border: 1px solid #c9b;
+  border: 1px solid var(--border-color);
   border-spacing: 0;
   border-collapse: collapse;
 }
 
 table th,
 table td {
-  border: 1px solid #c9b;
+  border: 1px solid var(--border-color);
   padding: 5px 11px;
 }
 
@@ -248,15 +245,15 @@ table th {
 }
 
 table tr:nth-of-type(2n) td {
-  background: #fef;
+  background: var(--code-background-color);
 }
 
 kbd {
   padding: 0 4px;
-  background: #fef;
-  border: 1px solid #ccc;
+  background: var(--code-background-color);
+  border: 1px solid var(--border-color);
   border-radius: 3px;
-  box-shadow: 0 2px 0 #ccc;
+  box-shadow: 0 2px 0 var(--border-color);
   font-family: "Open Sans", ".SFNSText-Regular", "Segoe UI", "Helvetica",
     "Lucida Grande", "Tahoma", "Yu Gothic UI", "Malgun Gothic", sans-serif;
   font-size: 0.8em;
@@ -266,7 +263,7 @@ ul.serum-toc {
   display: inline-block;
   margin: 0;
   padding: 0.25em 0.5em;
-  border: 1px solid #fef;
+  border: 1px solid var(--border-color);
   list-style-type: none;
 }
 
@@ -290,19 +287,13 @@ ul.serum-toc li.indent-5 {
 }
 
 ul.serum-toc li span.number {
-  color: #635;
+  color: var(--color);
   margin-right: 0.5em;
 }
 
 @media screen and (max-width: 1279px) {
   nav ul li {
-    display: block;
     margin: 0.5rem 0;
-  }
-
-  nav ul li:before {
-    content: "";
-    padding: 0;
   }
 
   #wrapper {
@@ -322,16 +313,5 @@ ul.serum-toc li span.number {
   article > div ul,
   article > div ol {
     padding-left: 24px;
-  }
-
-  pre code {
-    overflow-x: scroll;
-  }
-
-  span.tags {
-    display: block;
-  }
-  span.tags:before {
-    content: "";
   }
 }
