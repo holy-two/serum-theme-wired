@@ -131,6 +131,7 @@ a:active code {
 }
 
 #wrapper {
+  position: relative;
   box-sizing: border-box;
   margin: 0 auto;
   padding: var(--wrapper-padding);
