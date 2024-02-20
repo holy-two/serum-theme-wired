@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title><%= Enum.join(Enum.filter([@page.title, @site.name], &(&1 != "")), " - ") %></title>
+    <%= include "favicon" %>
     <link rel="stylesheet" href="<%= asset "css/style.css" %>">
     <link rel="stylesheet" href="<%= asset "css/prism.css" %>">
     <script type="importmap">
