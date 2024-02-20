@@ -21,8 +21,8 @@
       <nav><%= include "nav" %></nav>
       <wired-divider></wired-divider>
       <main><%= @contents %></main>
-      <wired-divider></wired-divider>
       <footer>
+        <wired-divider></wired-divider>
         <%= include "footer" %>
         <p>
           Powered by <wired-link href="https://github.com/Dalgona/Serum">Serum</wired-link> v<%= Application.spec(:serum, :vsn) %>,

@@ -88,6 +88,8 @@ nav ul li {
 footer {
   font-size: 0.75rem;
   opacity: 0.75;
+  position: absolute;
+  bottom: 5em;
 }
 
 footer p {
