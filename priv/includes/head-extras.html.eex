@@ -2,3 +2,4 @@
 <!-- Override "includes/head-extras.html.eex" -->
 <!-- to add more tags inside this <head> tag. -->
 <!--==========================================-->
+<link rel="icon" type="image/png" href="<%= asset "images/serum.png" %>"/>
