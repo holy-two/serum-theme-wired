@@ -2,7 +2,7 @@ defmodule Serum.Themes.Wired do
   @behaviour Serum.Theme
 
   @priv_dir :code.priv_dir(:serum_theme_wired)
-  @theme_version Mix.Project.config[:version]
+  @theme_version Mix.Project.config()[:version]
 
   def name, do: "Wired"
 

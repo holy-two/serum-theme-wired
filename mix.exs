@@ -20,7 +20,7 @@ defmodule Serum.Themes.Wired.MixProject do
 
   defp deps do
     [
-      {:serum, git: "https://github.com/Dalgona/Serum.git", branch: "v1/master" },
+      {:serum, git: "https://github.com/Dalgona/Serum.git", branch: "v1/master"}
     ]
   end
 
