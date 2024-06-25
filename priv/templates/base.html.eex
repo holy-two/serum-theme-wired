@@ -6,12 +6,7 @@
     <title><%= Enum.join(Enum.filter([@page.title, @site.name], &(&1 != "")), " - ") %></title>
     <link rel="stylesheet" href="<%= asset "css/style.css" %>">
     <link rel="stylesheet" href="<%= asset "css/prism.css" %>">
-    <script type="importmap">
-      <%= Serum.Themes.Wired.Importmap.include() %>
-    </script>
-    <script type="module">
-      import "wired-elements";
-    </script>
+    <%= include "wired-elements" %>
     <script src="<%= asset "js/prism.js" %>"></script>
     <%= include "head-extras" %>
   </head>
